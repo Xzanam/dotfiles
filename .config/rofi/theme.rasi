@@ -1,0 +1,135 @@
+
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+* {
+    background-color:  transparent; 
+    // Bold, Italic, Underline
+    highlight:     bold #ffffff;
+}
+configuration{
+    display-drun: "Applications:";
+    display-window: "Windows";
+    drun-display-format: "{icon} {name}";
+    modi: "window,run,drun";
+    show-icons: true;
+  }
+@theme "/dev/null"
+window {
+    background-color: black / 20% ;
+    border-color:     blue;
+    border-radius:    2mm;
+
+    padding: 10mm;
+
+    height:   50%;
+    width:    150mm;
+    border:  0px;
+    text-color: white;
+
+
+    location: center;
+    anchor:   center;
+}
+inputbar {
+    background-color: transparent;
+    text-color:       black;
+    children: [prompt, entry];
+    spacing: 1mm;
+}
+prompt {
+  background-color: transparent ;
+  border-radius: 0mm;
+  width: 15mm;
+}
+textbox-end {
+  border-radius: 0mm 5mm 5mm 0mm;
+  width: 15mm;
+  expand: false;
+}
+entry {
+  background-color: transparent  ;
+}
+prompt, entry, textbox-end, num-filtered-rows {
+  background-color: grey  / 50 % ;
+  text-color: inherit;
+  padding: 2mm;
+  vertical-align: 0.5;
+}
+element {
+    border-radius: 5mm;
+    children: [element-icon];
+}
+textbox-current-entry {
+    border-radius: 5mm;
+    background-color: grey;
+    text-color: black;
+    placeholder: "n/a";
+    padding: 2mm;
+    horizontal-align: 0.5;
+  }
+element-icon {
+  expand: true;
+  size: 10mm;
+  vertial-align: 0.5;
+  horizontal-align: 0.5;
+  padding: 2mm;
+}
+
+
+mainbox {
+    expand: true;
+    background-color: transparent;
+    spacing:  5mm;
+    children: [
+                inputbar,
+                listview,
+                textbox-current-entry
+    ];
+}
+icon-current-entry {
+    size: 100mm;
+  }
+listview {
+    padding: 0em;
+    dynamic: false;
+    lines: 0;
+    columns: 5;
+    flow: horizontal;
+}
+element selected  normal {
+    background-color: MediumSlateBlue;
+}
+element normal active {
+    text-color: MediumTurquoise;
+}
+element normal urgent {
+    text-color: red;
+}
+element alternate normal {
+}
+element alternate active {
+    text-color: MediumTurquoise;
+}
+element alternate urgent {
+    text-color: MediumVioletRed;
+}
+element selected active {
+    background-color: MediumTurquoise;
+    text-color: black;
+}
+element selected urgent {
+    background-color: MediumVioletRed;
+    text-color: black;
+}
+error-message {
+    expand: true;
+    background-color: red;
+    border-color: darkred;
+    border: 2px;
+    padding: 1em;
+}
+
