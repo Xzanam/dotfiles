@@ -1,0 +1,52 @@
+configuration {
+    font: "monospace 12";
+    dmenu: true;              // Ensure compatibility with scripts
+}
+
+* {
+    background: #1e1e2e;
+    foreground: #cdd6f4;
+    //border: #6c7086;
+    padding: 5px;
+    spacing: 10px;
+    highlight: #89b4fa;
+    highlight-text: #1e1e2e;
+}
+
+window {
+    width: 50%; 
+    height: 100px;              // Adjust menu width
+    border: 0px;
+    padding: 10px;
+}
+
+mainbox {
+    children: [listview];
+    spacing: 0px;
+}
+
+listview {
+    layout: horizontal;       // Horizontal layout for options
+    spacing: 20px;            // Space between items
+    fixed-height: false;
+    scrollbar: false;
+}
+
+element {
+    background: #313244;
+    foreground: inherit;
+    padding: 10px;
+    //border: 2px solid transparent;
+    text-align: center;       // Center align text below icons
+}
+
+element selected {
+    background: #89b4fa;
+    foreground: #1e1e2e;
+    //border: 2px solid #6c7086;
+}
+
+icon {
+    size: 48px;               // Icon size
+    margin: 0 0 5px 0;        // Space between icon and text
+}
