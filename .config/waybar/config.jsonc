@@ -7,8 +7,8 @@
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["custom/logo", "clock"],
-  "modules-center":["custom/notification",  "hyprland/workspaces"],
+  "modules-left": ["custom/logo", "clock", "hyprland/workspaces"],
+  "modules-center":["custom/notification", "hyprland/window"],
   "modules-right": ["custom/pomodoro","pulseaudio","backlight", "network", "battery", "tray"],
 
   "tray": {
@@ -103,12 +103,5 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-"custom/pomodoro": {
-	"format": "{}",
-	"return-type": "json",
-	"exec": "waybar-module-pomodoro",
-	"on-click": "waybar-module-pomodoro toggle",
-	"on-click-right": "waybar-module-pomodoro reset",
-},
 
 }
