@@ -8,8 +8,8 @@
   "passthrough": false,
   "fixed-center": true,
   "modules-left": ["custom/logo", "clock", "hyprland/workspaces"],
-  "modules-center":["custom/notification", "hyprland/window"],
-  "modules-right": ["custom/pomodoro","pulseaudio","backlight", "network", "battery", "tray"],
+  "modules-center":[ "hyprland/window"],
+  "modules-right": ["custom/pomodoro","pulseaudio","backlight", "network", "battery", "tray", "custom/notification"],
 
   "tray": {
     "show-passive-items": true,

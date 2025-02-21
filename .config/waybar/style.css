@@ -81,6 +81,8 @@ window#waybar.hidden {
 
 #custom-notification{
   font-size:15px;
+  background-color: transparent;
+  color: black ;
 }
 #custom-logo {
   padding: 0px 10px;

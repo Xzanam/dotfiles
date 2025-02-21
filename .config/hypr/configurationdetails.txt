@@ -1,0 +1,6 @@
+Hyprland Plugins: using hyprpm 
+  Hyprscroller : a better paperwm like layout 
+  Hyprshot : for screenshot
+  Hyprspace : for workspace overview 
+  
+
