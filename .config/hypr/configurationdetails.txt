@@ -4,3 +4,8 @@ Hyprland Plugins: using hyprpm
   Hyprspace : for workspace overview 
   
 
+scripts/ 
+  - toggle_layout.sh 
+      -> A script to change the Hyprland layout: {general { layout}} 
+      -> Toggle between Dwindle, scroller and master layout 
+
