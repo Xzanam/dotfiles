@@ -1,0 +1,20 @@
+Operators and Motions 
+	Commands that change text are made from an operator and a motion.
+
+	For delete 
+    		d      - is the delete operator.
+    		motion - is what the operator will operate on (listed below).
+
+
+Searching for help 
+	:help 
+
+	<Space> s h : to search through help
+
+KEYMAPS I'd not like to forget 
+
+	:yap : yank around the paragraph
+	:%s/new/old/g/c : global replace 'new' with 'old' keyword
+		g for global , c for query yes/no
+		can be :s/new/old/g for the current line
+
