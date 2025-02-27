@@ -72,7 +72,8 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        //"on-click": "/home/zanam/.config/waybar/scripts/rofi-wifi-menu.sh" 
     },
  "backlight": {
         // "device": "acpi_video1",
