@@ -1,0 +1,6 @@
+creating symlinks: 
+
+ln -sf ~/dotfiles/test ~/.config/test
+	 .config/test should not exist
+	 -s for symbolic link 
+	 -f for force 

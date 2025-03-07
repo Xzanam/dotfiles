@@ -1,4 +1,5 @@
 Operators and Motions 
+
 	Commands that change text are made from an operator and a motion.
 
 	For delete 
