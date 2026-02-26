@@ -25,12 +25,13 @@ window-rule {
 // For Setting Windows : set small windowsizes + floating window
 window-rule { 
   match app-id=r#"blueman-manager"#
+  match app-id=r#"pavucontrol"#
   open-floating true
   default-column-width { fixed 600;}
   default-window-height { fixed 400;}
 }
 
- 
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -41,6 +42,11 @@ window-rule {
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
+}
+
+window-rule { 
+  match title=r#"Engine"#
+  open-floating true
 }
 
 // Example: enable rounded corners for all windows.
