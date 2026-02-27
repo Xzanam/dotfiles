@@ -9,20 +9,17 @@
   "margin-right": 5,
   "margin-bottom": 0,
   "modules-left": [
-    "custom/omarchy",
-     "custom/separator",
-    "hyprland/workspaces",
+    "custom/separator",
+    "niri/workspaces",
     "custom/separator",
     "cpu",
     "memory",
     "pulseaudio#output"
-
   ],
   "modules-center": [
     "clock",
-    "custom/voxtype",
-    "custom/update",
-    "custom/screenrecording-indicator"
+    "custom/update"
+    // "custom/screenrecording-indicator"
   ],
   "modules-right": [
     "group/tray-expander",
@@ -38,39 +35,33 @@
     "pulseaudio#input",
     "battery"
   ],
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "cursor": true,
-    "format": "{icon}",
-    "format-icons": {
-     "default": "",
-     "empty": "",
-     "focused": "",
-	   "active": ""
-  },
-      "persistent-workspaces": {
-      "*": 6
-	},
-},
-"custom/separator": {
-    "format": "|", 
+  // "niri/workspaces": {
+  //   "disable-scroll": false,
+  //   "all-outputs": true,
+  //   "cursor": true,
+  //   "format": "{icon}",
+  //   "format-icons": {
+  //     "default": "",
+  //     "empty": "",
+  //     "focused": "",
+  //     "active": ""
+  //   },
+  //   "persistent-workspaces": {
+  //     "*": 6
+  //   },
+  // },
+  "custom/separator": {
+    "format": "|",
     "tooltip": false
-},
-"custom/omarchy": {
-    "format": "󱡓",
-    "on-click": "omarchy-menu",
-    "on-click-right": "xdg-terminal-exec",
-    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
   },
-  "custom/update": {
-    "format": "",
-    "exec": "omarchy-update-available",
-    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
-    "tooltip-format": "Omarchy update available",
-    "signal": 7,
-    "interval": 21600
-  },
+  // "custom/update": {
+  //   "format": "",
+  //   "exec": "o",
+  //   "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+  //   "tooltip-format": "Omarchy update available",
+  //   "signal": 7,
+  //   "interval": 21600
+  // },
   "custom/voxtype": {
     "exec": "omarchy-voxtype-status",
     "return-type": "json",
@@ -97,22 +88,47 @@
   "cpu": {
     "interval": 1,
     "format": "CPU {icon}",
-    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "format-icons": [
+      "󰝦",
+      "󰪞",
+      "󰪟",
+      "󰪠",
+      "󰪡",
+      "󰪢",
+      "󰪣",
+      "󰪤",
+      "󰪥"
+    ],
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "backlight": {
-        "device": "intel_backlight",
-        "rotate": 0,
-        "format": "{icon}",
-        "tooltip-format": "{percent}%",
-        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
-        "scroll-step": 1,
-        "min-length": 2
-    },
+    "device": "intel_backlight",
+    "rotate": 0,
+    "format": "{icon}",
+    "tooltip-format": "{percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃝",
+      "󰃟",
+      "󰃠"
+    ],
+    "scroll-step": 1,
+    "min-length": 2
+  },
   "memory": {
     "interval": 1,
     "format": "RAM {icon}",
-    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "format-icons": [
+      "󰝦",
+      "󰪞",
+      "󰪟",
+      "󰪠",
+      "󰪡",
+      "󰪢",
+      "󰪣",
+      "󰪤",
+      "󰪥"
+    ],
     "max-length": 10,
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
@@ -130,7 +146,6 @@
         "today": "<span color='#ff6699'><b>{}</b></span>",
       },
     },
-    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "network": {
     "format-icons": [
@@ -149,7 +164,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
+    // "on-click": "omarchy-launch-wifi"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -186,7 +201,7 @@
     "tooltip-format-discharging": "{timeTo}",
     "tooltip-format-charging": "{timeTo}",
     "interval": 5,
-    "on-click": "omarchy-menu power",
+    // "on-click": "omarchy-menu power",
     "states": {
       "warning": 20,
       "critical": 10
@@ -197,7 +212,7 @@
     "format-disabled": "󰂲",
     "format-connected": "󰂱",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "omarchy-launch-bluetooth"
+    "on-click": "blueman-manager"
   },
   "pulseaudio#input": {
     "format-source": "",
@@ -207,7 +222,7 @@
     "scroll-step": 1,
     "smooth-scrolling-threshold": 1,
     "max-volume": 100,
-    "on-click": "omarchy-launch-audio",
+    "on-click": "pavucontrol",
     "on-click-right": "pamixer -t",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
@@ -216,16 +231,26 @@
     "format": "VOL {icon}",
     "tooltip-format": "{icon}   {volume}%",
     "format-muted": "",
-      "format-icons": {
-      "default": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+    "format-icons": {
+      "default": [
+        "󰝦",
+        "󰪞",
+        "󰪟",
+        "󰪠",
+        "󰪡",
+        "󰪢",
+        "󰪣",
+        "󰪤",
+        "󰪥"
+      ]
     },
     "max-volume": 100,
     "scroll-step": 2,
     "smooth-scrolling-threshold": 1,
-    "on-click": "omarchy-launch-audio",
+    "on-click": "pavucontrol",
     "on-click-right": "pamixer -t"
   },
-   "mpris": {
+  "mpris": {
     "format": " {artist}-{title}",
     "format-paused": "<span color='grey'>{status_icon}</span>",
     "max-length": 25,
@@ -236,7 +261,11 @@
     "status-icons": {
       "paused": ""
     },
-    "ignored-players": ["firefox", "chromium", "brave"]
+    "ignored-players": [
+      "firefox",
+      "chromium",
+      "brave"
+    ]
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -273,12 +302,11 @@
   "tray": {
     "icon-size": 12,
     "spacing": 12
-  },
-  "custom/screenrecording-indicator": {
-    "on-click": "omarchy-cmd-screenrecord",
-    "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
-    "signal": 8,
-    "return-type": "json"
-  },
-  
+  }
+  // "custom/screenrecording-indicator": {
+  //   "on-click": "omarchy-cmd-screenrecord",
+  //   "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+  //   "signal": 8,
+  //   "return-type": "json"
+  // },
 }
