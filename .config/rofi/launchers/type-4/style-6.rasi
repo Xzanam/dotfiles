@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
+	modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
     display-drun:               "drun :";
     display-run:                "";
@@ -77,7 +77,7 @@ mainbox {
     enabled:                     true;
     spacing:                     20px;
     margin:                      0px;
-    padding:                     35%;
+    padding:                     30%;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
