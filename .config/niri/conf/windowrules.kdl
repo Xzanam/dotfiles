@@ -15,12 +15,28 @@ window-rule {
 
 //transparency
 window-rule { 
-  opacity 0.8
+  opacity  0.96
 }
 
+
+//for the weird backgrround on active window
 window-rule { 
     match app-id=r#"firefox$"#
+    match app-id=r#"discord$"#
+    match app-id=r#"localsend$"#
+    match app-id="org.gnome.Nautilus"
+    match app-id="code"
+    match app-id="google-chrome"
+
     draw-border-with-background false
+}
+
+//scartch-pad-terminal  { 
+window-rule {  
+  match app-id="kitty-floating"
+  open-floating true
+  default-column-width{fixed 1080; }
+  default-window-height{ fixed 720;}
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
