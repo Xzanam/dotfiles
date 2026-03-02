@@ -16,7 +16,9 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+E hotkey-overlay-title="Open Explorer: Thunar" {spawn "thunar";}
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Shift+T hotkey-overlay-title="Open a Scratchpad Terminal: kitty" { spawn-sh "kitty --class kitty-floating"; }
     Mod+SPACE hotkey-overlay-title="Run an Application: Rofi" { spawn "~/.config/rofi/launchers/type-3/launcher.sh"; }
+    Mod+Alt+SPACE hotkey-overlay-title="Run an Application: Rofi" { spawn "~/.config/rofi/launchers/type-3/window.sh"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
 
