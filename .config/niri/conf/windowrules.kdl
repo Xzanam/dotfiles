@@ -34,6 +34,8 @@ window-rule {
 //scartch-pad-terminal  { 
 window-rule {  
   match app-id="kitty-floating"
+  match app-id="alacritty-floating"
+  match app-id="thunar"
   open-floating true
   default-column-width{fixed 1080; }
   default-window-height{ fixed 720;}
