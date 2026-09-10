@@ -86,6 +86,10 @@ end
 hl.bind(mainMod .. " + C", hl.dsp.focus({ workspace = "name:coding" }))
 hl.bind(mainMod .. " + B", hl.dsp.focus({ workspace = "name:browser" }))
 
+-- Switch to Workspaces relatively
+hl.bind(mainMod .. "+ CTRL + L", hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mainMod .. "+ CTRL + H", hl.dsp.focus({ workspace = "-1" }))
+
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
 hl.bind(mainMod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
