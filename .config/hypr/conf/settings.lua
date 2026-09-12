@@ -28,7 +28,7 @@ hl.device({
 -- General look and feel
 hl.config({
 	general = {
-		gaps_in = 3,
+		gaps_in = 2,
 		gaps_out = 5,
 		border_size = 1,
 		col = {
@@ -43,13 +43,24 @@ hl.config({
 		disable_hyprland_logo = true,
 	},
 
+	scrolling = {
+		explicit_column_widths = "0.333, 0.5, 0.667, 1.0",
+		column_width = 0.5,
+		follow_focus = true,
+	},
+
 	decoration = {
 		rounding = 3,
 
 		blur = {
 			enabled = true,
-			size = 7,
+			brightness = 0.5,
+			size = 10,
 			passes = 3,
+
+			vibrancy = 0.35,
+			vibrancy_darkness = 0.45,
+			special = false,
 		},
 
 		shadow = {
