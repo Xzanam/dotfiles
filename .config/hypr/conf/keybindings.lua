@@ -1,13 +1,12 @@
 -- Keybindings
 -- See https://wiki.hypr.land/Configuring/Basics/Binds/
-
 local mainMod = "SUPER"
 
 -- Launch applications
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --class floatkitty"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher toggle"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 -- hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("~/.config/rofi/launchers/type-1/launcher.sh"))
 -- hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("~/.config/rofi/launchers/type-3/launcher.sh"))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("~/.config/rofi/scripts/dual_monitor_menu.sh"))
@@ -86,10 +85,6 @@ end
 hl.bind(mainMod .. " + C", hl.dsp.focus({ workspace = "name:coding" }))
 hl.bind(mainMod .. " + B", hl.dsp.focus({ workspace = "name:browser" }))
 
--- Switch to Workspaces relatively
-hl.bind(mainMod .. "+ CTRL + L", hl.dsp.focus({ workspace = "+1" }))
-hl.bind(mainMod .. "+ CTRL + H", hl.dsp.focus({ workspace = "-1" }))
-
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
 hl.bind(mainMod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
@@ -116,14 +111,24 @@ hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+--relative workspace focus
+--
+hl.bind(mainMod .. "+ CAPS + l", hl.dsp.focus({ workspace = "r+1" }))
+hl.bind(mainMod .. "+ CAPS + h", hl.dsp.focus({ workspace = "r-1" }))
+
 -- Misc
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
-hl.bind(
-	"SUPER + V",
-	hl.dsp.exec_cmd(
-		[[cliphist list | rofi -dmenu -p "Clipboard" -theme "$HOME/.config/rofi/applets/type-1/style-2.rasi" | cliphist decode | wl-copy]]
-	)
-)
+-- for toggling waybar
+-- hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+
+--Clipboard Noctalia
+hl.bind(mainMod .. "+ V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
+-- Clipboard using clliphist and rofi // Currently Disable since using the Clipboard from noctalia shell
+-- hl.bind(
+-- 	"SUPER + V",
+-- 	hl.dsp.exec_cmd(
+-- 		[[cliphist list | rofi -dmenu -p "Clipboard" -theme "$HOME/.config/rofi/applets/type-1/style-2.rasi" | cliphist decode | wl-copy]]
+-- 	)
+-- )
 -- Change wallpaper
 -- hl.bind(mainMod .. " + }", hl.dsp.exec_cmd("~/scripts/change_wallpaper.sh"))
 
@@ -132,7 +137,7 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 
--- Mouse side buttons (commented out in the original config)
+hl.bind(mainMod .. "+ R", hl.dsp.layout("colresize +conf"))
 -- hl.bind(mainMod .. " + mouse:8", hl.dsp.focus({ direction = "left" }))
 -- hl.bind(mainMod .. " + mouse:9", hl.dsp.focus({ direction = "right" }))
 
