@@ -1,8 +1,11 @@
+require("conf.modules.zoom").setup()
+--
 -- Keybindings
 -- See https://wiki.hypr.land/Configuring/Basics/Binds/
 local mainMod = "SUPER"
 
 -- Launch applications
+--
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("kitty --class floatkitty"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
@@ -12,7 +15,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launch
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("~/.config/rofi/scripts/dual_monitor_menu.sh"))
 
 -- Window management
-hl.bind(mainMod .. " + Q", hl.dsp.window.kill()) -- close the active window
+hl.bind(mainMod .. " + Q", hl.dsp.window.close()) -- close the active window
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo()) -- only works for layout=dwindle
 hl.bind("ALT + return", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
@@ -25,27 +28,12 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wlogout --protocol layer-shell"))
 -- Special workspace
 hl.bind("ALT + SHIFT + S", hl.dsp.window.move({ workspace = "special" })) -- move a window to special workspace
 hl.bind("ALT + SHIFT + S", hl.dsp.workspace.toggle_special("")) -- needed for silent toggle
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "e+0" })) -- move a window from special workspace to the workspace behind
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("")) -- toggle special workspace
-
--- Zoom at cursor (mainMod + ALT + PageUp/Down, 0 to reset)
-hl.bind(
-	mainMod .. " + ALT + Page_Up",
-	hl.dsp.exec_cmd(
-		[[hyprctl keyword cursor:zoom_factor "$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')"]]
-	)
-)
-hl.bind(
-	mainMod .. " + ALT + Page_Down",
-	hl.dsp.exec_cmd(
-		[[hyprctl keyword cursor:zoom_factor "$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')"]]
-	)
-)
-hl.bind(mainMod .. " + ALT + 0", hl.dsp.exec_cmd("hyprctl keyword cursor:zoom_factor 1"))
+hl.bind("CTRL + SHIFT + S", hl.dsp.window.move({ workspace = "e+0" })) -- move a window from special workspace to the workspace behind
+hl.bind(mainMod .. "+  S", hl.dsp.workspace.toggle_special("")) -- toggle special workspace
 
 -- Screenshots
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 -- Legion S7 special keys
 hl.bind("code:121", hl.dsp.exec_cmd("pamixer -t")) -- Speaker mute (FN+F1)

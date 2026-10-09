@@ -36,7 +36,7 @@ hl.config({
 			active_border = "rgb(5ef6f5)",
 			inactive_border = "rgba(595959aa)",
 		},
-		layout = "scrolling",
+		layout = "master",
 	},
 
 	misc = {
